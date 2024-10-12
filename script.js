@@ -4,6 +4,7 @@ var gamelayer = document.querySelector(".gamelayer");
 var timediv=document.querySelector(".timediv");
 var scorediv=document.querySelector(".scorediv");
 
+// overlayer
 btn.addEventListener("click", () => {
   overlayer.style.display = "none";
   gamelayer.style.display = "flex";
@@ -12,6 +13,8 @@ btn.addEventListener("click", () => {
 });
 
 var firstget, fbox, sbox, boxval, fcolor, scolor, fboxcolor, sboxcolor, color,score=0;
+
+// box onclick function
 function get(event) {
   // event.target.className
   // console.log(event.target.textContent);
@@ -126,6 +129,7 @@ function getcolor(boxcolor){
       return color;
 }
 
+// scores and timing
 var timing=document.querySelector("#timing");
 var scoring=document.querySelector("#score");
 function scoreF(s){
