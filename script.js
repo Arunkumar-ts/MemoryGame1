@@ -84,7 +84,7 @@ function get(event) {
   }
 }
 
-// genareting random numbers
+// generating random numbers
 var random1 = [];
 random1.push(100);
 while (random1.length <= 10) {
