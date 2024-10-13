@@ -13,6 +13,7 @@ btn.addEventListener("click", () => {
 });
 
 var firstget, fbox, sbox, boxval, fcolor, scolor, fboxcolor, sboxcolor, color,score=0;
+var timercall,playdata;
 
 // box onclick function
 function get(event) {
@@ -71,7 +72,8 @@ function get(event) {
       }
       
     }
-  } else {
+  } 
+  else {
     firstget = 1;
     fbox = document.getElementById(event.target.id);
     fcolor = random1[Number(event.target.textContent)];
@@ -80,7 +82,7 @@ function get(event) {
     setTimeout(() => {
       box.style.backgroundColor = color;
     }, 300);
-    starttimer();
+    timefun();
   }
 }
 
@@ -132,6 +134,38 @@ function getcolor(boxcolor){
 // scores and timing
 var timing=document.querySelector("#timing");
 var scoring=document.querySelector("#score");
+var minutes=0,seconds=0,hours=0;
+
 function scoreF(s){
   scoring.textContent=s;
+  if(score==10){
+    setTimeout(()=>{
+      clearInterval(timercall);
+      alert("You win the game at "+timing.textContent+"minutes !");
+      playdata=confirm("Do you want play again?");
+      if(playdata){
+        location.reload();
+      }
+    },400);
+  }
+}
+function timefun(){
+  timercall=setInterval(timerstart,1000);
+}
+
+function timerstart(){
+  seconds++;
+  if(seconds==60){
+    seconds=0;
+    minutes++;
+    if(minutes==60){
+      minutes=0;
+      hours++;
+    }
+  }
+  let m=minutes<10 ? "0"+minutes : minutes;
+  let s=seconds<10 ? "0"+seconds : seconds;
+  let h=hours<10 ? "0"+hours : hours;
+
+  timing.innerHTML=h+":"+m+":"+s;
 }
