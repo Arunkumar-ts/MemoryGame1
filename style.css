@@ -134,7 +134,7 @@ pre{
 
 
 }
-@media screen and (max-width:500px){
+@media screen and (max-width: 480px){
     .scorediv{
         position: absolute;
         top:0;
