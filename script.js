@@ -141,7 +141,12 @@ function scoreF(s){
   if(score==10){
     setTimeout(()=>{
       clearInterval(timercall);
-      alert("You win the game at "+timing.textContent+"minutes !");
+      if(minutes){
+        alert("You win the game at "+timing.textContent+" minutes !");
+      }
+      else{
+        alert("You win the game at "+timing.textContent+" seconds !");
+      }
       playdata=confirm("Do you want play again?");
       if(playdata){
         location.reload();
