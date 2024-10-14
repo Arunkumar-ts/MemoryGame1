@@ -34,7 +34,7 @@ function get(event) {
         color=getcolor(sboxcolor);
         setTimeout(() => {
           box.style.backgroundColor = color;
-        }, 300);
+        }, 100);
       }
       else{
         firstget=1;
@@ -52,11 +52,12 @@ function get(event) {
             firstget = 1;
             fbox = document.getElementById(event.target.id);
             fcolor = random1[Number(event.target.textContent)];
+            scolor=0;
             fboxcolor = "color" + fcolor;
             color=getcolor(fboxcolor);
             setTimeout(() => {
                 box.style.backgroundColor = color;
-            }, 300);
+            }, 100);
         }
       else{
         fbox.style.backgroundColor = "rgba(2, 156, 156, 0.5)";
@@ -64,11 +65,12 @@ function get(event) {
         firstget = 1;
         fbox = document.getElementById(event.target.id);
         fcolor = random1[Number(event.target.textContent)];
+        scolor=0;
         fboxcolor = "color" + fcolor;
         color=getcolor(fboxcolor);
         setTimeout(() => {
             box.style.backgroundColor = color;
-        }, 300);
+        }, 100);
       }
       
     }
@@ -81,7 +83,7 @@ function get(event) {
     color=getcolor(fboxcolor);
     setTimeout(() => {
       box.style.backgroundColor = color;
-    }, 300);
+    }, 100);
     timefun();
   }
 }
