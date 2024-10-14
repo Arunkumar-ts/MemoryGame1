@@ -158,5 +158,8 @@ pre{
     .gamelayer{
         width: 80%;
         height: 65%;
+        display: none;
+        justify-content: center;
+        align-items: center;
     }
 }
